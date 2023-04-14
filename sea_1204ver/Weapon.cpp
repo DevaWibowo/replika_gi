@@ -103,41 +103,6 @@ void Weapon::SetTier(int tier){
 int Weapon::GetTier(){
 	return this->Tier;
 }
-void Weapon::ReturnVector(){
-	int AscendLv = this->GetAscend();
-	int TierWeap = this->GetTier();
-	
-	vector<int> vLimitMatWeap, vLimitMobA, vLimitMobB;
-	switch(TierWeap){
-		case 0:
-			vLimitMatWeap = { 1, 1, 2, 1 }; // 2, 3, 3, 4
-			vLimitMobA = { 1, 4, 2, 4 }; // 2, 2, 3, 3
-			vLimitMobB = { 1, 2, 2, 3 }; // 1, 1, 2, 2
-			break;
-		case 1:
-			vLimitMatWeap = { 1, 1, 3, 1 }; // 2, 3, 3, 4
-			vLimitMobA = { 1, 5, 3, 5 };  // 2, 2, 3, 3
-			vLimitMobB = { 1, 4, 3, 4 }; // 1, 1, 2, 2
-			break;
-		case 2:
-			vLimitMatWeap = { 5, 5, 9, 5, 9, 6 }; // 2, 3, 3, 4, 4, 5
-			vLimitMobA = { 5, 18, 9, 18, 14, 27}; // 2, 2, 3, 3, 4, 4
-			vLimitMobB = { 3, 12, 9, 14, 9, 18 }; // 1, 1, 2, 2, 3, 3
-			break;
-		case 3:
-			vLimitMatWeap = { 5, 5, 9, 5, 9, 6 }; // 2, 3, 3, 4, 4, 5
-			vLimitMobA = { 5, 18, 9, 18, 14, 27}; // 2, 2, 3, 3, 4, 4
-			vLimitMobB = { 3, 12, 9, 14, 9, 18 }; // 1, 1, 2, 2, 3, 3
-			break;
-		case 4:
-			vLimitMatWeap = { 5, 5, 9, 5, 9, 6 }; // 2, 3, 3, 4, 4, 5
-			vLimitMobA = { 5, 18, 9, 18, 14, 27}; // 2, 2, 3, 3, 4, 4
-			vLimitMobB = { 3, 12, 9, 14, 9, 18 }; // 1, 1, 2, 2, 3, 3
-			break;
-		default:
-			cout << "Nothing" << endl;
-	}
-}
 void Weapon::Ascend(
 	Mat_WeapAsc& mat1, Mat_WeapAsc& mat2, Mat_WeapAsc& mat3, Mat_WeapAsc& mat4,
 	Mat_Mob& moba1, Mat_Mob&  moba2, Mat_Mob& moba3,
@@ -148,14 +113,14 @@ void Weapon::Ascend(
 	vector<int> vLimitMatWeap, vLimitMobA, vLimitMobB;
 	switch(TierWeap){
 		case 0:
-			vLimitMatWeap = { 1, 1, 2, 1 }; // 2, 3, 3, 4
-			vLimitMobA = { 1, 4, 2, 4 }; // 2, 2, 3, 3
-			vLimitMobB = { 1, 2, 2, 3 }; // 1, 1, 2, 2
+			vLimitMatWeap = { 1, 1, 2, 1, 0, 0 }; // 2, 3, 3, 4
+			vLimitMobA = { 1, 4, 2, 4, 0, 0 }; // 2, 2, 3, 3
+			vLimitMobB = { 1, 2, 2, 3, 0, 0 }; // 1, 1, 2, 2
 			break;
 		case 1:
-			vLimitMatWeap = { 1, 1, 3, 1 }; // 2, 3, 3, 4
-			vLimitMobA = { 1, 5, 3, 5 };  // 2, 2, 3, 3
-			vLimitMobB = { 1, 4, 3, 4 }; // 1, 1, 2, 2
+			vLimitMatWeap = { 1, 1, 3, 1, 0, 0 }; // 2, 3, 3, 4
+			vLimitMobA = { 1, 5, 3, 5, 0, 0 };  // 2, 2, 3, 3
+			vLimitMobB = { 1, 4, 3, 4, 0, 0 }; // 1, 1, 2, 2
 			break;
 		case 2:
 			vLimitMatWeap = { 2, 2, 4, 2, 4, 3 }; // 2, 3, 3, 4, 4, 5
@@ -176,21 +141,109 @@ void Weapon::Ascend(
 			cout << "Nothing" << endl;
 }
 	
-	int Jmlmat1 = mat1.GetJumlah();
-	int Jmlmat2 = mat2.GetJumlah();
-	int Jmlmat3 = mat3.GetJumlah();
-	int Jmlmat4 = mat4.GetJumlah();
-	int Jmlmoba1 = moba1.GetJumlah();
-	int Jmlmoba2 = moba2.GetJumlah();
-	int Jmlmoba3 = moba3.GetJumlah();
-	int Jmlmobb1 = mobb1.GetJumlah();
-	int Jmlmobb2 = mobb2.GetJumlah();
-	int Jmlmobb3 = mobb3.GetJumlah();
+	int JumlahMatWeap2 = mat1.GetJumlah();
+	int JumlahMatWeap3 = mat2.GetJumlah();
+	int JumlahMatWeap4 = mat3.GetJumlah();
+	int JumlahMatWeap5 = mat4.GetJumlah();
+	int JumlahElite2 = moba1.GetJumlah();
+	int JumlahElite3 = moba2.GetJumlah();
+	int JumlahElite4 = moba3.GetJumlah();
+	int JumlahMob1 = mobb1.GetJumlah();
+	int JumlahMob2 = mobb2.GetJumlah();
+	int JumlahMob3 = mobb3.GetJumlah();
+	
+	int BatasMatWeap = vLimitMatWeap[AscendLv];
+	int BatasMatElite = vLimitMobA[AscendLv];
+	int BatasMatMob = vLimitMobB[AscendLv];
 	
 	switch(AscendLv){
 		case 0:
+			if(JumlahMatWeap2 >= BatasMatWeap && JumlahElite2 >= BatasMatElite && JumlahMob1 >= BatasMatMob){
+				mat1.KurangJumlah(BatasMatWeap);
+				moba1.KurangJumlah(BatasMatElite);
+				mobb1.KurangJumlah(BatasMatMob);
+				this->SetAscendLv(1);
+			}
+			break;
+		case 1:
+			if(JumlahMatWeap2 >= BatasMatWeap && JumlahElite2 >= BatasMatElite && JumlahMob1 >= BatasMatMob){
+				mat1.KurangJumlah(BatasMatWeap);
+				moba1.KurangJumlah(BatasMatElite);
+				mobb1.KurangJumlah(BatasMatMob);
+				this->SetAscendLv(2);
+			}
+			break;
+		case 2:
+			if(JumlahMatWeap2 >= BatasMatWeap && JumlahElite2 >= BatasMatElite && JumlahMob1 >= BatasMatMob){
+				mat1.KurangJumlah(BatasMatWeap);
+				moba1.KurangJumlah(BatasMatElite);
+				mobb1.KurangJumlah(BatasMatMob);
+				this->SetAscendLv(3);
+			}
+			break;
+		case 3:
+			if(JumlahMatWeap2 >= BatasMatWeap && JumlahElite2 >= BatasMatElite && JumlahMob1 >= BatasMatMob){
+				mat1.KurangJumlah(BatasMatWeap);
+				moba1.KurangJumlah(BatasMatElite);
+				mobb1.KurangJumlah(BatasMatMob);
+				this->SetAscendLv(4);
+			}
+			break;
+		case 4:
+			if(JumlahMatWeap2 >= BatasMatWeap && JumlahElite2 >= BatasMatElite && JumlahMob1 >= BatasMatMob){
+				if(TierWeap != 0 || TierWeap != 1){
+					mat1.KurangJumlah(BatasMatWeap);
+					moba1.KurangJumlah(BatasMatElite);
+					mobb1.KurangJumlah(BatasMatMob);
+					this->SetAscendLv(5);
+				}
+			}
+			break;
+		case 5:
+			if(JumlahMatWeap2 >= BatasMatWeap && JumlahElite2 >= BatasMatElite && JumlahMob1 >= BatasMatMob){
+				mat1.KurangJumlah(BatasMatWeap);
+				moba1.KurangJumlah(BatasMatElite);
+				mobb1.KurangJumlah(BatasMatMob);
+				this->SetAscendLv(6);
+			}
 			break;
 		default:
 			cout << "Ascend Sudah Maksimal!!" << endl;
 	}
 };
+//void Weapon::ReturnVector(){
+//	int AscendLv = this->GetAscend();
+//	int TierWeap = this->GetTier();
+//	
+//	vector<int> vLimitMatWeap, vLimitMobA, vLimitMobB;
+//	switch(TierWeap){
+//		case 0:
+//			vLimitMatWeap = { 1, 1, 2, 1 }; // 2, 3, 3, 4
+//			vLimitMobA = { 1, 4, 2, 4 }; // 2, 2, 3, 3
+//			vLimitMobB = { 1, 2, 2, 3 }; // 1, 1, 2, 2
+//			break;
+//		case 1:
+//			vLimitMatWeap = { 1, 1, 3, 1 }; // 2, 3, 3, 4
+//			vLimitMobA = { 1, 5, 3, 5 };  // 2, 2, 3, 3
+//			vLimitMobB = { 1, 4, 3, 4 }; // 1, 1, 2, 2
+//			break;
+//		case 2:
+//			vLimitMatWeap = { 5, 5, 9, 5, 9, 6 }; // 2, 3, 3, 4, 4, 5
+//			vLimitMobA = { 5, 18, 9, 18, 14, 27}; // 2, 2, 3, 3, 4, 4
+//			vLimitMobB = { 3, 12, 9, 14, 9, 18 }; // 1, 1, 2, 2, 3, 3
+//			break;
+//		case 3:
+//			vLimitMatWeap = { 5, 5, 9, 5, 9, 6 }; // 2, 3, 3, 4, 4, 5
+//			vLimitMobA = { 5, 18, 9, 18, 14, 27}; // 2, 2, 3, 3, 4, 4
+//			vLimitMobB = { 3, 12, 9, 14, 9, 18 }; // 1, 1, 2, 2, 3, 3
+//			break;
+//		case 4:
+//			vLimitMatWeap = { 5, 5, 9, 5, 9, 6 }; // 2, 3, 3, 4, 4, 5
+//			vLimitMobA = { 5, 18, 9, 18, 14, 27}; // 2, 2, 3, 3, 4, 4
+//			vLimitMobB = { 3, 12, 9, 14, 9, 18 }; // 1, 1, 2, 2, 3, 3
+//			break;
+//		default:
+//			cout << "Nothing" << endl;
+//	}	
+//}
+

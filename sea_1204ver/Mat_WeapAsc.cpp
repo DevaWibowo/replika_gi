@@ -31,3 +31,4 @@ Mat_WeapAsc* DivineBodyFromGuyun = new Mat_WeapAsc();
 Mat_WeapAsc* TileofDecarabian = new Mat_WeapAsc();
 Mat_WeapAsc* DebrisofDecarabian = new Mat_WeapAsc();
 Mat_WeapAsc* FragmentofDecarabian = new Mat_WeapAsc();
+Mat_WeapAsc* ScatteredPieceofDecarabian = new Mat_WeapAsc();

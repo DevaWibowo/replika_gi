@@ -145,6 +145,17 @@ int main(){
 	LuminescentPollen->SetJumlah(30);
 	CrystallineCystDust->SetJumlah(30);
 	
+	TileofDecarabian->SetJumlah(10);
+	DebrisofDecarabian->SetJumlah(10);
+	FragmentofDecarabian->SetJumlah(10);
+	ScatteredPieceofDecarabian->SetJumlah(10);
+	HeavyHorn->SetJumlah(10);
+	BlackBronzeHorn->SetJumlah(10);
+	BlackCrystalHorn->SetJumlah(10);
+	FirmArrowhead->SetJumlah(10);
+	SharpArrowhead->SetJumlah(10);
+	FeatheredArrowhead->SetJumlah(10);
+	
 	pRedhorn->SetTier(4);
 	pFloatingDream->SetTier(4);
 	pBlackcliffAgate->SetTier(3);
@@ -161,6 +172,17 @@ int main(){
 		*LuminousSandsFromGuyun, *LustrousStoneFromGuyun, *RelicFromGuyun, *DivineBodyFromGuyun,
 		*HunterSacKnife, *AgentSacKnife, *InspSacKnife,
 		*DiviningScroll, *SealedScroll, *ForbiddenCScroll);
+		
+	pSilverSword->SetAscendLv(4);
+	pDullBlades->SetAscendLv(4);
+	pSilverSword->Ascend(
+		*TileofDecarabian, *DebrisofDecarabian, *FragmentofDecarabian, *ScatteredPieceofDecarabian,
+		*HeavyHorn, *BlackBronzeHorn, *BlackCrystalHorn,
+		*FirmArrowhead, *SharpArrowhead, *FeatheredArrowhead);
+	pDullBlades->Ascend(
+		*TileofDecarabian, *DebrisofDecarabian, *FragmentofDecarabian, *ScatteredPieceofDecarabian,
+		*HeavyHorn, *BlackBronzeHorn, *BlackCrystalHorn,
+		*FirmArrowhead, *SharpArrowhead, *FeatheredArrowhead);
 		
 //	cout << pRedhorn->GetTier() << endl;
 //	delete pRedhorn, pFloatingDream;

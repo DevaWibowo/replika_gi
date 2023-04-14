@@ -16,9 +16,11 @@ Mat_Mob* SlimeConcentrate = new Mat_Mob();
 
 Mat_Mob* HeavyHorn = new Mat_Mob();
 Mat_Mob* BlackBronzeHorn = new Mat_Mob();
+Mat_Mob* BlackCrystalHorn = new Mat_Mob();
 
 Mat_Mob* FirmArrowhead = new Mat_Mob();
 Mat_Mob* SharpArrowhead = new Mat_Mob();
+Mat_Mob* FeatheredArrowhead = new Mat_Mob();
 
 Mat_Mob* DamagedPrism = new Mat_Mob();
 Mat_Mob* TurbidPrism = new Mat_Mob();
