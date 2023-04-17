@@ -10,11 +10,13 @@
 #include "Mat_Gem.cpp"
 #include "Mat_Mob.cpp"
 #include "Mat_Local.cpp"
+#include "Mat_Talent.cpp"
+#include "Mat_Weekly.cpp"
 using namespace std;
 
 class Karakter{
 	private:
-		int Level=1, Experience=0, BatasExp=50, Tier=0, LimitLevel, Ascend=0;
+		int Level=1, Experience=0, BatasExp=50, Tier=0, LimitLevel, Ascend=0, TalentNormal=0, TalentSkill=0, TalentBurst=0;
 		double HealthPoint;
 		string Nama;
 		
@@ -29,6 +31,9 @@ class Karakter{
 		void SetHealthPoint(double hp);
 		void SetLimitLevel(int limit);
 		void SetAscend(int ascend);
+		void SetTalentNormal(int level);
+		void SetTalentSkill(int level);
+		void SetTalentBurst(int level);
 		
 		// METHOD GETTER
 		string GetNama();
@@ -40,6 +45,9 @@ class Karakter{
 		int GetTier();
 		int GetLimitLevel();
 		int GetAscend();
+		int GetTalentNormal();
+		int GetTalentSkill();
+		int GetTalentBurst();
 		
 		// METHOD TAMBAH PROPERTI
 		void TambahLevel(int level);
@@ -51,6 +59,7 @@ class Karakter{
 		void ConsumeExpBook(ExpBook& buku, int amount);
 		void LevelUp();
 		void LimitBreak(int level, Material tier1, Material tier2);
+		void TalentUp(Mat_Talent& talent1, Mat_Talent& talent2, Mat_Talent& talent3, Mat_Mob& mob1, Mat_Mob& mob2, Mat_Mob& mob3, Mat_Weekly& weekly, Mat_Talent& crown);
 		
 		// METHOD VOID / LAINNYA
 		

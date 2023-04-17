@@ -74,6 +74,24 @@ int Karakter::GetTier(){
 //			break;
 //	}
 }
+void Karakter::SetTalentNormal(int level){
+	this->TalentNormal = level;
+}
+void Karakter::SetTalentSkill(int level){
+	this->TalentSkill = level;
+}
+void Karakter::SetTalentBurst(int level){
+	this->TalentBurst = level;
+}
+int Karakter::GetTalentNormal(){
+	return this->TalentNormal;
+}
+int Karakter::GetTalentSkill(){
+	return this->TalentSkill;
+}
+int Karakter::GetTalentBurst(){
+	return this->TalentBurst;
+}
 int Karakter::GetAscend(){
 	return this->Ascend;
 }
@@ -327,4 +345,124 @@ void Karakter::AscendChar(
 	}
 }
 
+int PilihanTalent;
+void PreTalentUp(){
+	cout << "Menu LevelUp Talent" << endl;
+	cout << "1. Talent Normal" << endl;
+	cout << "2. Talent Skill" << endl;
+	cout << "3. Talent Burst" << endl;
+	cin >> PilihanTalent;
+}
+void Karakter::TalentUp(
+	Mat_Talent& talent1, Mat_Talent& talent2, Mat_Talent& talent3,
+	Mat_Mob& mob1, Mat_Mob& mob2, Mat_Mob& mob3,
+	Mat_Weekly& weekly, Mat_Talent& crown)
+{
+	int 
+	switch(PilihanTalent){
+		case 1:
+			cout << "Anda akan meningkatkan Talent Normal" << endl;
+			break;
+		case 2:
+			cout << "Anda akan meningkatkan Talent Skill" << endl;
+			break;
+		case 3:
+			cout << "Anda akan meningkatkan Talent Burst" << endl;
+			break;
+		defautl:
+			cout << "Out of bound" << endl;
+	}
+	
+	int Teachings = talent1.GetJumlah();
+	int Guides = talent2.GetJumlah();
+	int Philosophy = talent3.GetJumlah();
+	int Mob1 = mob1.GetJumlah();
+	int Mob2 = mob2.GetJumlah();
+	int Mob3 = mob3.GetJumlah();
+	int Weekly = weekly.GetJumlah();
+	int Crown = crown.GetJumlah();
+	int LvNormal = this->GetTalentNormal();
+	
+	vector<int> vLimitTalent = {3, 2, 4, 6, 9, 4, 6, 12, 16};
+	vector<int> vLimitMob    = {6, 3, 4, 6, 9, 4, 6, 9, 12};
+	vector<int> vLimitWeekly = {0, 0, 0, 0, 0, 0, 1, 1, 2};
+	vector<int> vLimitCrown  = {0, 0, 0, 0, 0, 0, 0, 0, 1};
 
+	int LimitTalent = vLimitTalent[LvNormal];
+	int LimitMob = vLimitMob[LvNormal];
+	int LimitWeekly = vLimitWeekly[LvNormal];
+	int LimitCrown = vLimitCrown[LvNormal];
+	
+	switch(LvNormal){
+		case 0:
+			if(Teachings >= LimitTalent && Mob1 >= LimitMob){
+				talent1.KurangJumlah(LimitTalent);
+				mob1.KurangJumlah(LimitMob);
+				this->SetTalentNormal(1);
+			}
+			break;
+		case 1:
+			if(Guides >= LimitTalent && Mob2 >= LimitMob){
+				talent2.KurangJumlah(LimitTalent);
+				mob2.KurangJumlah(LimitMob);
+				this->SetTalentNormal(2);
+			}
+			break;
+		case 2:
+			if(Guides >= LimitTalent && Mob2 >= LimitMob){
+				talent2.KurangJumlah(LimitTalent);
+				mob2.KurangJumlah(LimitMob);
+				this->SetTalentNormal(3);
+			}
+			break;
+		case 3:
+			if(Guides >= LimitTalent && Mob2 >= LimitMob){
+				talent2.KurangJumlah(LimitTalent);
+				mob2.KurangJumlah(LimitMob);
+				this->SetTalentNormal(4);
+			}
+			break;
+		case 4:
+			if(Guides >= LimitTalent && Mob2 >= LimitMob){
+				talent2.KurangJumlah(LimitTalent);
+				mob2.KurangJumlah(LimitMob);
+				this->SetTalentNormal(5);
+			}
+			break;
+		case 5:
+			if(Philosophy >= LimitTalent && Mob3 >= LimitMob && Weekly >= LimitWeekly){
+				talent3.KurangJumlah(LimitTalent);
+				mob3.KurangJumlah(LimitMob);
+				weekly.KurangJumlah(LimitWeekly);
+				this->SetTalentNormal(6);
+			}
+			break;
+		case 6:
+			if(Philosophy >= LimitTalent && Mob3 >= LimitMob && Weekly >= LimitWeekly){
+				talent3.KurangJumlah(LimitTalent);
+				mob3.KurangJumlah(LimitMob);
+				weekly.KurangJumlah(LimitWeekly);
+				this->SetTalentNormal(7);
+			}
+			break;
+		case 7:
+			if(Philosophy >= LimitTalent && Mob3 >= LimitMob && Weekly >= LimitWeekly){
+				talent3.KurangJumlah(LimitTalent);
+				mob3.KurangJumlah(LimitMob);
+				weekly.KurangJumlah(LimitWeekly);
+				this->SetTalentNormal(8);
+			}
+			break;
+		case 8:
+			if(Philosophy >= LimitTalent && Mob3 >= LimitMob && Weekly >= LimitWeekly && Crown >= LimitCrown){
+				talent3.KurangJumlah(LimitTalent);
+				mob3.KurangJumlah(LimitMob);
+				weekly.KurangJumlah(LimitWeekly);
+				crown.KurangJumlah(LimitCrown);
+				this->SetTalentNormal(9);
+			}
+			break;
+		default:
+			cout << "Out of Bound!!" << endl;
+	}
+}

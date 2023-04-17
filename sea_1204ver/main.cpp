@@ -1,12 +1,12 @@
 #include "Kamus.h"
 
-Weapon Redhorn, FloatingDream, BlackcliffAgate, HarbingerDawn, SilverSword, DullBlade;
-Weapon* pRedhorn = &Redhorn;
-Weapon* pFloatingDream = &FloatingDream;
-Weapon* pBlackcliffAgate = &BlackcliffAgate;
-Weapon* pHarbingerDawn = &HarbingerDawn;
-Weapon* pSilverSword = &SilverSword;
-Weapon* pDullBlades = &DullBlade;
+//Weapon Redhorn, FloatingDream, BlackcliffAgate, HarbingerDawn, SilverSword, DullBlade;
+//Weapon* pRedhorn = &Redhorn;
+//Weapon* pFloatingDream = &FloatingDream;
+//Weapon* pBlackcliffAgate = &BlackcliffAgate;
+//Weapon* pHarbingerDawn = &HarbingerDawn;
+//Weapon* pSilverSword = &SilverSword;
+//Weapon* pDullBlades = &DullBlade;
 
 //Weapon Thundering;
 //Weapon* pThundering = &Thundering;
@@ -14,21 +14,22 @@ Weapon* pDullBlades = &DullBlade;
 Karakter Itto;
 Karakter* pKarakter = &Itto;
 
-void DisplayMaterial(){
-	cout << PrithivaTopazSilver->GetJumlah() << endl;
-	cout << Onikabuto->GetJumlah() << endl;
-	cout << SlimeCondensate->GetJumlah() << endl;
-};
 
-void DisplayDataWeap(){
-	cout << "Level Redhorn: " << pRedhorn->GetLevel() << endl;
-	cout << "Limit Level  : " << pRedhorn->GetLimit() << endl;
-	cout << "Level Ascend : " << pRedhorn->GetAscend() << endl;
-	cout << "Exp Redhorn  : " << pRedhorn->GetExp() << endl;
-	cout << "Batas Redhorn: " << pRedhorn->GetBatasExpWeap() << endl;
-	cout << "Jumlah Ore   : " << EnhanmentOre->GetJumlah();
-	cout << endl;
-}
+//void DisplayMaterial(){
+//	cout << PrithivaTopazSilver->GetJumlah() << endl;
+//	cout << Onikabuto->GetJumlah() << endl;
+//	cout << SlimeCondensate->GetJumlah() << endl;
+//};
+//
+//void DisplayDataWeap(){
+//	cout << "Level Redhorn: " << pRedhorn->GetLevel() << endl;
+//	cout << "Limit Level  : " << pRedhorn->GetLimit() << endl;
+//	cout << "Level Ascend : " << pRedhorn->GetAscend() << endl;
+//	cout << "Exp Redhorn  : " << pRedhorn->GetExp() << endl;
+//	cout << "Batas Redhorn: " << pRedhorn->GetBatasExpWeap() << endl;
+//	cout << "Jumlah Ore   : " << EnhanmentOre->GetJumlah();
+//	cout << endl;
+//}
 
 void DisplayDataChar(){
 	cout << "Level Karakter : " << pKarakter->GetLevel() << endl;
@@ -134,61 +135,107 @@ int main(){
 //	
 //	pWeapon->ReturnVector();
 //	pThundering->ReturnVector();
-	OasisGardenReminiscence->SetJumlah(10);
-	OasisGardenKindness->SetJumlah(10);
-	OasisGardenMourning->SetJumlah(10);
-	OasisGardenTruth->SetJumlah(10);
-	DamagedPrism->SetJumlah(30);
-	TurbidPrism->SetJumlah(30);
-	RadiantPrism->SetJumlah(30);
-	FungalSpores->SetJumlah(30);
-	LuminescentPollen->SetJumlah(30);
-	CrystallineCystDust->SetJumlah(30);
-	
-	TileofDecarabian->SetJumlah(10);
-	DebrisofDecarabian->SetJumlah(10);
-	FragmentofDecarabian->SetJumlah(10);
-	ScatteredPieceofDecarabian->SetJumlah(10);
-	HeavyHorn->SetJumlah(10);
-	BlackBronzeHorn->SetJumlah(10);
-	BlackCrystalHorn->SetJumlah(10);
-	FirmArrowhead->SetJumlah(10);
-	SharpArrowhead->SetJumlah(10);
-	FeatheredArrowhead->SetJumlah(10);
-	
-	pRedhorn->SetTier(4);
-	pFloatingDream->SetTier(4);
-	pBlackcliffAgate->SetTier(3);
-	pHarbingerDawn->SetTier(2);
-	pSilverSword->SetTier(1);
-	pDullBlades->SetTier(0);
-	
-	
-	pFloatingDream->Ascend(
-		*OasisGardenReminiscence, *OasisGardenKindness, *OasisGardenMourning, *OasisGardenTruth,
-		*DamagedPrism, *TurbidPrism, *RadiantPrism,
-		*FungalSpores, *LuminescentPollen, *CrystallineCystDust);
-	pBlackcliffAgate->Ascend(
-		*LuminousSandsFromGuyun, *LustrousStoneFromGuyun, *RelicFromGuyun, *DivineBodyFromGuyun,
-		*HunterSacKnife, *AgentSacKnife, *InspSacKnife,
-		*DiviningScroll, *SealedScroll, *ForbiddenCScroll);
-		
-	pSilverSword->SetAscendLv(4);
-	pDullBlades->SetAscendLv(4);
-	pSilverSword->Ascend(
-		*TileofDecarabian, *DebrisofDecarabian, *FragmentofDecarabian, *ScatteredPieceofDecarabian,
-		*HeavyHorn, *BlackBronzeHorn, *BlackCrystalHorn,
-		*FirmArrowhead, *SharpArrowhead, *FeatheredArrowhead);
-	pDullBlades->Ascend(
-		*TileofDecarabian, *DebrisofDecarabian, *FragmentofDecarabian, *ScatteredPieceofDecarabian,
-		*HeavyHorn, *BlackBronzeHorn, *BlackCrystalHorn,
-		*FirmArrowhead, *SharpArrowhead, *FeatheredArrowhead);
+//	OasisGardenReminiscence->SetJumlah(10);
+//	OasisGardenKindness->SetJumlah(10);
+//	OasisGardenMourning->SetJumlah(10);
+//	OasisGardenTruth->SetJumlah(10);
+//	DamagedPrism->SetJumlah(30);
+//	TurbidPrism->SetJumlah(30);
+//	RadiantPrism->SetJumlah(30);
+//	FungalSpores->SetJumlah(30);
+//	LuminescentPollen->SetJumlah(30);
+//	CrystallineCystDust->SetJumlah(30);
+//	
+//	TileofDecarabian->SetJumlah(10);
+//	DebrisofDecarabian->SetJumlah(10);
+//	FragmentofDecarabian->SetJumlah(10);
+//	ScatteredPieceofDecarabian->SetJumlah(10);
+//	HeavyHorn->SetJumlah(10);
+//	BlackBronzeHorn->SetJumlah(10);
+//	BlackCrystalHorn->SetJumlah(10);
+//	FirmArrowhead->SetJumlah(10);
+//	SharpArrowhead->SetJumlah(10);
+//	FeatheredArrowhead->SetJumlah(10);
+//	
+//	pRedhorn->SetTier(4);
+//	pFloatingDream->SetTier(4);
+//	pBlackcliffAgate->SetTier(3);
+//	pHarbingerDawn->SetTier(2);
+//	pSilverSword->SetTier(1);
+//	pDullBlades->SetTier(0);
+//	
+//	
+//	pFloatingDream->Ascend(
+//		*OasisGardenReminiscence, *OasisGardenKindness, *OasisGardenMourning, *OasisGardenTruth,
+//		*DamagedPrism, *TurbidPrism, *RadiantPrism,
+//		*FungalSpores, *LuminescentPollen, *CrystallineCystDust);
+//	pBlackcliffAgate->Ascend(
+//		*LuminousSandsFromGuyun, *LustrousStoneFromGuyun, *RelicFromGuyun, *DivineBodyFromGuyun,
+//		*HunterSacKnife, *AgentSacKnife, *InspSacKnife,
+//		*DiviningScroll, *SealedScroll, *ForbiddenCScroll);
+//		
+//	pSilverSword->SetAscendLv(4);
+//	pDullBlades->SetAscendLv(4);
+//	pSilverSword->Ascend(
+//		*TileofDecarabian, *DebrisofDecarabian, *FragmentofDecarabian, *ScatteredPieceofDecarabian,
+//		*HeavyHorn, *BlackBronzeHorn, *BlackCrystalHorn,
+//		*FirmArrowhead, *SharpArrowhead, *FeatheredArrowhead);
+//	pDullBlades->Ascend(
+//		*TileofDecarabian, *DebrisofDecarabian, *FragmentofDecarabian, *ScatteredPieceofDecarabian,
+//		*HeavyHorn, *BlackBronzeHorn, *BlackCrystalHorn,
+//		*FirmArrowhead, *SharpArrowhead, *FeatheredArrowhead);
 		
 //	cout << pRedhorn->GetTier() << endl;
 //	delete pRedhorn, pFloatingDream;
 //	cout << pRedhorn->GetTier() << endl;
+	Mat_Talent TeachingTransience, GuidesTransience, PhilosophyTransience;
+	Mat_Mob DiviningScroll, SealedScroll, ForbiddenScroll;
+	Mat_Weekly DragonLordCrown;
+	Mat_Talent Crown;
+
+	Mat_Talent* pTeachingTransience = &TeachingTransience;
+	Mat_Talent* pGuidesTransience = &GuidesTransience;
+	Mat_Talent* pPhilosophyTransience = &PhilosophyTransience;
+	Mat_Talent* pCrown = &Crown;
+	Mat_Weekly* pDragonLordCrown = &DragonLordCrown;
+	Mat_Mob* pDiviningScroll = &DiviningScroll;
+	Mat_Mob* pSealedScroll = &SealedScroll;
+	Mat_Mob* pForbiddenScroll = &ForbiddenScroll;
 	
+	pTeachingTransience->SetJumlah(10);
+	pGuidesTransience->SetJumlah(10);
+	pPhilosophyTransience->SetJumlah(10);
+	pCrown->SetJumlah(10);
+	pDragonLordCrown->SetJumlah(10);
+	pDiviningScroll->SetJumlah(10);
+	pSealedScroll->SetJumlah(10);
+	pForbiddenScroll->SetJumlah(10);
+	
+	cout << pKarakter->GetTalentNormal() << endl;
+	cout << pTeachingTransience->GetJumlah() << endl;
+	cout << pGuidesTransience->GetJumlah() << endl;
+	cout << pPhilosophyTransience->GetJumlah() << endl;
+	cout << pCrown->GetJumlah() << endl;
+	cout << pDragonLordCrown->GetJumlah() << endl;
+	cout << pDiviningScroll->GetJumlah() << endl;
+	cout << pSealedScroll->GetJumlah() << endl;
+	cout << pForbiddenScroll->GetJumlah() << endl;
+	cout << endl;
+	
+	PreTalentUp();
+	pKarakter->TalentUp(
+		*pTeachingTransience, *pGuidesTransience, *pPhilosophyTransience,
+		*pDiviningScroll, *pSealedScroll, *pForbiddenScroll,
+		*pDragonLordCrown, *pCrown);
+
+	cout << pKarakter->GetTalentNormal() << endl;
+	cout << pTeachingTransience->GetJumlah() << endl;
+	cout << pGuidesTransience->GetJumlah() << endl;
+	cout << pPhilosophyTransience->GetJumlah() << endl;
+	cout << pCrown->GetJumlah() << endl;
+	cout << pDragonLordCrown->GetJumlah() << endl;
+	cout << pDiviningScroll->GetJumlah() << endl;
+	cout << pSealedScroll->GetJumlah() << endl;
+	cout << pForbiddenScroll->GetJumlah() << endl;
 	return 0;
 }
-
-

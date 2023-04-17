@@ -1,3 +1,4 @@
+#pragma once
 #include "Material.cpp"
 
 class Mat_Talent : public Material{
@@ -8,4 +9,8 @@ class Mat_Talent : public Material{
 		}
 };
 
-Mat_Talent* 
+//Mat_Talent* Crown = new Mat_Talent();
+//Mat_Talent* TeachingPhilosopy = new Mat_Talent();
+//Mat_Talent* TeachingofTransience = new Mat_Talent();
+//Mat_Talent* GuideofTransience = new Mat_Talent();
+//Mat_Talent* PhilosophiesofTransience = new Mat_Talent();

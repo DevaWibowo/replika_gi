@@ -42,6 +42,8 @@ Mat_Mob* LeyLineBranch = new Mat_Mob();
 Mat_Mob* LeyLineLeaves = new Mat_Mob();
 Mat_Mob* LeyLineSprout = new Mat_Mob();
 
+
+
 //void CraftSlimeSecretion(int jumlah){
 //	int JumlahSConden = SlimeCondensate->GetJumlah();
 //	int JumlahPerlu = jumlah*3;

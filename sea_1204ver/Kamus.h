@@ -7,4 +7,5 @@
 #include "Mat_Gem.cpp"
 #include "Mat_Mob.cpp"
 #include "Mat_Ore.cpp"
+#include "Mat_Talent.cpp"
 #include "Weapon.cpp"
